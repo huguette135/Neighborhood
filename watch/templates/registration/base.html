@@ -1,0 +1,38 @@
+{% load bootstrap4 %}
+{% load static %}
+<!doctype html>
+<html lang="en" class="full-height">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% if title %}
+    <title>Neighborhood Watch  - {{title}}</title>
+    {% else %}
+      <title>Neighborhood Watch  </title>
+    {% endif %}
+    
+    {% block styles %}
+      {% bootstrap_css %}
+      <link rel="stylesheet" href="{% static 'css/register.css' %}">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+      
+    {% endblock %}
+    <title>Neighborhood Watch </title>
+  </head>
+  <body>
+    <!--Main Navigation-->
+<header>
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="background-color:#8DC26F;">
+      <a class="navbar-brand" href="/"><strong>Neighbourhoods Watch </strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
