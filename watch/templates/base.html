@@ -1,0 +1,18 @@
+{% load bootstrap4 %}
+{% load static %}
+<!doctype html>
+<html lang="en" class="full-height">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% if title %}
+    <title>Neighborhood Watch - {{title}}</title>
+    {% else %}
+      <title>Neighborhood Watch  </title>
+    {% endif %}
+    
+    {% block styles %}
+      {% bootstrap_css %}
+      <link rel="stylesheet" href="{% static 'css/index.css' %}">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
