@@ -1,4 +1,4 @@
-ffrom django.contrib import admin
+from django.contrib import admin
 from .models import Profile,Neighborhood,Business,Authority,Hospital,Alert
 # Register your models here.
 admin.site.register(Profile)
