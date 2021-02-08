@@ -1,3 +1,6 @@
+
+63 lines (56 sloc)  2.31 KB
+ 
 {% extends 'registration/base.html' %}
 {% load bootstrap4 %}
 {% block content %}
@@ -19,3 +22,45 @@
                   <small class="text-muted" style="font-weight: bold;">Last Name:      </small>
                   <small style="font-weight: bold;">{{user.profile.last_name}}</small><hr>
                   <small class="text-muted" style="font-weight: bold;">Neighborhood:     </small>
+                  <small style="font-weight: bold;">{{user.profile.neighborhood}}</small><hr>
+                  <small class="text-muted" style="font-weight: bold;">Email:     </small>
+                  <small style="font-weight: bold;">{{user.profile.email}}</small><hr>
+                  <small class="text-muted" style="font-weight: bold;">Bio</small><br><br>
+
+                  <small >{{user.profile.bio}}</small><hr>
+               </div>
+            </div>
+         </div>
+      </div>
+  
+   <div class="container">
+      <div class="main-agileinfo">
+         <div class="agileits-top">
+            {{form.media}}
+            <form  action="{% url 'profile' %}" method="post" enctype="multipart/form-data">
+               {%csrf_token%}
+
+               {{form.as_p}}
+               <input type="submit" value="update">
+            </form>
+         </div>
+      </div>
+
+   </div><br><br>
+  
+</div>
+<!-- //copyright -->
+<ul class="colorlib-bubbles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+</ul>
+
+{% endblock %}
