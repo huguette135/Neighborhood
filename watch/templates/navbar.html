@@ -1,0 +1,67 @@
+<!--Main Navigation-->
+<header>
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+      <a class="navbar-brand" href="/"><strong>Neighbourhoods Watch </strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+              <a class="nav-link" href="/admin">Admin</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="#directory">Directory</a>
+              </li>
+          </ul>
+          {% if user.is_authenticated %}
+          <div class='navbar-right'style="padding: 20px;">
+            <span style="font-weight: bold;">
+            <div class="" role="menu">
+              <a href="{% url 'profile' %}"><img src="{{request.user.profile.profile_pic.url}}" alt="" width="50px" height="50px" style="border-radius: 50%;"></a>
+              <small style="padding-right: 10px;color:white;font-weight:bold">Welcome  <a href="{% url 'profile' %}" style="color: white;">{{request.user.username}}</a></small>
+  
+              
+              
+              <a class="btn btn-warning" style="border-radius: 25px;" href="logout/">Logout</a> 
+            </div>
+            </span>
+              {% else %}
+            <span style="font-weight: bold;">
+            <div class='navbar-right'style="padding: 20px;">
+                <small style="margin-right:10px;color:white">Are you a member?</small>
+                <a style="color: white; margin-right:10px" href="login/">Login</a>
+  
+                <a  class="btn btn-light" style="border-radius: 25px;" href="{% url 'register' %}">Sign Up</a>
+            </div>
+            <div class='navbar-right'style="padding: 20px;">
+              
+            </div>
+            </span>
+          </div>
+          {% endif %}
+      </div>
+      
+    </nav>
+  
+    <div class="view intro-2" >
+      <div class="full-bg-img">
+        <div class="mask rgba-purple-light flex-center">
+          <div class="container text-center white-text wow fadeInUp home-text" >
+            <h1 style="font-family: 'Roboto Slab', serif;font-weight:bold;">Hello! Neighbor</h1>
+            <p>Stay  in the loop about everything happening in your neighborhood. From contact information of different handyman to meeting announcements or even alerts.</p>
+            <h6 style="font-weight: bold;font-size:x-large">Security - Events - Contacts</h6><br>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+  </header>
+  <!--Main Navigation-->
