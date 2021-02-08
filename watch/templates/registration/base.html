@@ -36,3 +36,26 @@
             <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
           </li>
         </ul>
+        
+      </div>
+    </nav>
+  </header>
+  <!--Main Navigation-->
+    <!--Main Layout-->
+    <main class="text-center py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12"> 
+                    {% block content %} {%endblock%}
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--Main Layout-->
+    {% block scripts %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      {% bootstrap_javascript %}
+    {% endblock %}
+    
+  </body>
+</html>
