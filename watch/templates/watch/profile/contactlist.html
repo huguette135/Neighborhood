@@ -1,0 +1,86 @@
+
+83 lines (79 sloc)  3.26 KB
+ 
+{% extends 'registration/base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+<div class="container" style="padding-top: 100px;">
+
+    <div class="container">
+        <h2 style="color:white;text-align:center;font-size:xx-large;"><span style="font-weight: bold;">Businesses </span>in {{user.profile.neighborhood}}     <a class="btn btn-sm btn-warning" href="#business">Add New Business</a> </h2><br><br>
+        <div >
+            {% for business in businesses %}
+                <div class="container">
+                    <div class="card ">
+                        <div class="card-text text-center" style="padding: 20px;">
+                            <p style="font-weight: bold;">{{business.name}}</p><br>
+                            <p>{{business.neighborhood}}</p><br>
+                            <p>Description: {{business.description}}</p><br>
+                            <p>TEL: {{business.contacts}}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div><br><br>
+    <div class="container">
+        <h2 style="color:white;text-align:center;font-size:xx-large;"><span style="font-weight: bold;">Police Authorities </span>in {{user.profile.neighborhood}} </h2><br><br>
+        <div >
+            {% for authority in authorities %}
+                <div class="container">
+                    <div class="card ">
+                        <div class="card-text text-center" style="padding: 20px;">
+                            <p style="font-weight: bold;">{{authority.name}}</p><br>
+                            <p>{{authority.contacts}}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div><br><br>
+    <div class="container">
+        <h2 style="color:white;text-align:center;font-size:xx-large"><span style="font-weight: bold;">Health Centers </span>in {{user.profile.neighborhood}} </h2><br><br>
+        <div >
+            {% for hospital in hospitals %}
+                <div class="container">
+                    <div class="card ">
+                        <div class="card-text text-center" style="padding: 20px;">
+                            <p style="font-weight: bold;">{{hospital.name}}</p><br>
+                            <p>{{hospital.contacts}}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="container" style="padding: 40px;" id="business">
+        <div class="main-agileinfo">
+            <div class="agileits-top">  
+                <h2 style="font-weight: bold;color:white">ADD YOUR BUSINESS</h2><hr>
+                {{form.media}}
+                <form  action="{% url 'contactlist' %}" method="post" enctype="multipart/form-data" id="businessform" style="color: white;">
+                {%csrf_token%}
+
+                {% bootstrap_form form%}
+                <input  class="btn btn-sm btn-warning" type="submit" value="New Business">
+                </form>
+            </div>
+        </div>
+    </div>
+  
+</div>
+<!-- //copyright -->
+<ul class="colorlib-bubbles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+</ul>
+
+{% endblock %}
