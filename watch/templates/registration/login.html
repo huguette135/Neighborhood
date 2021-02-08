@@ -1,0 +1,21 @@
+{%extends "registration/base.html"%}
+{% load bootstrap4 %}
+{% block content %}
+<div class="main-w3layouts wrapper">
+    <h1> Sign In </h1>
+    <div class="main-agileinfo">
+        <div class="agileits-top" style="color: white;">
+            <form  action="/accounts/login/" method="post">
+            {% csrf_token %}
+            {% bootstrap_form form%}
+
+            <div class="form-group">
+                <input type="submit" value="SIGNIN"><br>
+            </div>
+
+            <input type="hidden" name="next" value="{{next}}">
+
+            Don't have an account? <a href="{% url 'register' %}"><span style="color: white;font-weight:bold"> Sign up</span></a>
+
+            </form>  
+        </div>
