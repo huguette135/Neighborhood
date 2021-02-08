@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+<main>
+<div class="container">
+    {% if user.is_authenticated %}
+    <h3 style="color:#535250;text-align:center;"><strong>Hi!</strong>  {{user.profile.neighborhood}} Resident</h3><br>
+    <h5 class="text-muted">NB: <strong> New User: </strong>For a better experience please update your profile and select neighborhood  <a class="btn btn-sm btn-info" href="{% url 'profile' %}">Profile</a></h5>
+    <br><hr>
+    <div class="container">
+        <h1 style="font-weight: bold;color:red">Alerts</h1>
+        {% for alert in alerts %}
+        <div class="card">
+            <div class="card-body" >
+                <h3>{{alert.title}}</h3>
+                <p>{{alert.alert}}</p>
+                <small > Post on: {{alert.post_on}}</small>
+            </div>
+        </div>
+        {% endfor %}
+        <hr>
